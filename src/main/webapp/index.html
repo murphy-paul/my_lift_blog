@@ -8,11 +8,18 @@
     <div id="main" data-lift="surround?with=default;at=content">
       <h2>Welcome to your project!</h2>
       <p>
-        <span data-lift="HelloWorld.howdy">
+        <span data-lift="HelloWorld.howdy">	
           Welcome to your Lift app at <span id="time">Time goes here</span>
         </span>
         
-        <div data-lift="HelloWorld.listBlogs"></div>
+        <div class="blog-content">
+        	<div class="blog-item" itemscope itemtype="https://schema.org/TechArticle" data-lift="HomepageBlogContent">
+        		<a class="blog-link" href="link here">
+	        		<h1 class="heading" itemprop="name">Heading goes here</h1>
+	        		<span class="intro-text" itemprop="description">Description</span>
+        		</a>
+        	</div>
+        </div>
       </p>
     </div>
   </body>
