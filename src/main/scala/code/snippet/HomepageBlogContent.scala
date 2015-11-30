@@ -8,8 +8,8 @@ import code.model.Blog
 
 class HomepageBlogContent {
   
-  def render = ".blog-item" #> Blog.findAll.getOrElse(List()).map { item =>
-      ".blog-link [href]" #> item.displayPath &
+  def render = ".post" #> Blog.findAll.getOrElse(List()).map { item =>
+//      ".blog-link [href]" #> item.displayPath &
       ".heading *" #> item.headline &
       ".intro-text *" #> item.introText
     }
