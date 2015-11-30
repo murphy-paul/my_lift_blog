@@ -5,19 +5,20 @@
     <title>Home</title>
   </head>
   <body data-lift-content-id="main">
-    <div id="main" data-lift="surround?with=default;at=content">
-      <h2>Welcome to your project!</h2>
-      <p>
-        <span data-lift="HelloWorld.howdy">	
-          Welcome to your Lift app at <span id="time">Time goes here</span>
-        </span>
+    <div id="main" data-lift="surround?with=purecss_default;at=content">
         
         <div class="blog-content">
-        	<div class="blog-item" itemscope itemtype="https://schema.org/TechArticle" data-lift="HomepageBlogContent">
-        		<a class="blog-link" href="link here">
+        	<section class="blog-item" itemscope itemtype="https://schema.org/TechArticle" data-lift="HomepageBlogContent">
+        		<header class="post-header">
 	        		<h1 class="heading" itemprop="name">Heading goes here</h1>
-	        		<span class="intro-text" itemprop="description">Description</span>
-        		</a>
+	        		<p class="post-meta">
+                            By <a href="#" class="post-author">Paul Murphy</a>
+                        </p>
+        		</header>
+        		<div class="post-description">
+					<p class="intro-text" itemprop="description">Description</p>
+        		</div>
+        		
         	</div>
         </div>
       </p>
