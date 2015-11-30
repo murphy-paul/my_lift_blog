@@ -1,0 +1,1 @@
+web: target/universal/stage/bin/my-blog-site -Drun.mode=production
