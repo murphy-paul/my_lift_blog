@@ -6,7 +6,7 @@ import net.liftweb.common.Full
 case class Blog(headline: String, displayPath: String, introText: String, body: String)
 
 /**
- * TODO: The datasource should be mixed in for unit testing.
+ * TODO: The datasource should be add as traits
  */
 object Blog {
   

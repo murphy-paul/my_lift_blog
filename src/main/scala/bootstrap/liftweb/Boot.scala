@@ -24,7 +24,9 @@ class Boot {
     val entries = 
       List(
         Menu.i("Home") / "index",
-        Menu.param[Blog]("blog", "Blog page", s => Blog.findByDisplayPath(s), bi => bi.displayPath) / "blog" >> Hidden
+        Menu.param[Blog]("blog", "Blog page", 
+                         s => Blog.findByDisplayPath(s), 
+                         bi => bi.displayPath) / "blog" >> LocGroup("blog") >> Hidden
 	    )
 
     // set the sitemap.  Note if you don't want access control for

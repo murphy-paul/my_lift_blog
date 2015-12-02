@@ -23,3 +23,14 @@ But none of this options felt write. Liftweb is a view first framework, so to go
 I came across a blog site by [Richard Dallay](http://richard.dallaway.com/lift-26-release/) where he introduced me to Menu.param.
 
 The solution is to add the dynamic content to the sitemap, which has lots of benifits
+
+#Adding the found object to request scope
+Again, not knowing the liftweb framework well, my first instinct was to add the Model object into the Request context in order to be able to use it throught that request. But once again, liftweb has already considered such things.
+
+With the above approach, using the SiteMap to define the route*, you can now define a snippet class that takes a the case class as a constructor parameter.
+
+##Code
+class BlogPage(blog: Blog) {
+	def render: = ... // use the blog object in a meaninful way.
+}
+##Code
