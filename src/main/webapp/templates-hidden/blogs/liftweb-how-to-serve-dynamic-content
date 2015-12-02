@@ -1,0 +1,25 @@
+#How to serve dynamic content from your lift web application
+
+Coming from a MVC perspective, when I first started to develop using lift, my initial thoughts on how to serve dynamic content was to setup rewrite rules.
+The below snipet is an example of how to do that.
+
+##Code
+    LiftRules.statelessRewrite.append {
+      case RewriteRequest(
+            ParsePath(List("article",slug),_,_,_),_,_) =>
+               if(Blog.findByDisplayPath(slug).isDefined) {
+                RewriteResponse("content" :: Nil, Map("slug" -> slug) )
+               } else {
+                 RewriteResponse("index" :: Nil)
+               }
+
+    }
+##Code
+
+I also consider rest, and following a SPA design to dynamically load the content on the first end.
+
+But none of this options felt write. Liftweb is a view first framework, so to go down either of the above mentioned routes felt like a failure in my exploration of the lift framework. Surely there had to be a more liftweb  approach to solving the problem?
+
+I came across a blog site by [Richard Dallay](http://richard.dallaway.com/lift-26-release/) where he introduced me to Menu.param.
+
+The solution is to add the dynamic content to the sitemap, which has lots of benifits

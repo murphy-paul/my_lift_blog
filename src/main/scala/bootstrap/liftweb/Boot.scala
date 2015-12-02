@@ -9,6 +9,7 @@ import sitemap._
 import Loc._
 import net.liftmodules.JQueryModule
 import net.liftweb.http.js.jquery._
+import code.model.Blog
 
 /**
  * A class that's instantiated early and run.  It allows the application
@@ -20,13 +21,30 @@ class Boot {
     LiftRules.addToPackages("code")
 
     // Build SiteMap
-    val entries = List(
-      Menu.i("Home") / "index"
-	       )
+    val entries = 
+      List(
+        Menu.i("Home") / "index",
+        Menu.param[Blog]("blog", "Blog page", s => Blog.findByDisplayPath(s), bi => bi.displayPath) / "blog" >> Hidden
+	    )
 
     // set the sitemap.  Note if you don't want access control for
     // each page, just comment this line out.
     LiftRules.setSiteMap(SiteMap(entries:_*))
+    
+//    lazy val articleLoc = Menu.param[Blog]("blog", "Blog Detail Page", slug => Blog.findByDisplayPath(slug), blog => blog.displayPath) / "content" / *
+    
+        //Rewrite rules for search
+//    LiftRules.statelessRewrite.append {
+//      case RewriteRequest(
+//            ParsePath(List("article",slug),_,_,_),_,_) =>
+//               if(Blog.findByDisplayPath(slug).isDefined) {
+//                RewriteResponse("content" :: Nil, Map("slug" -> slug) )
+//               } else {
+//                 RewriteResponse("index" :: Nil)
+//               }
+//
+//    }
+
 
     //Show the spinny image when an Ajax call starts
     LiftRules.ajaxStart =
