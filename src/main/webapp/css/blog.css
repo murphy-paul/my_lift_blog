@@ -107,10 +107,19 @@ h3 {
     color: #444;
     line-height: 1.8em;
 }
+.post-body {
+    font-family: Georgia, "Cambria", serif;
+    color: #444;
+    line-height: 1.8em;
+}
 .post-meta {
     color: #999;
     font-size: 90%;
     margin: 0;
+}
+
+.post-body code {
+	font-size: 60%;
 }
 
 .post-category {
