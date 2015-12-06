@@ -6,35 +6,11 @@
 	</head>
 	<body data-lift-content-id="main">
 		<div id="main" data-lift="surround?with=purecss_default;at=content">
-			<header class="post-header">
-				<h1 itemprop="headline" class="post-title" data-lift="BlogPage.header"></h1>
-
-	
-<!--
-use embeds
- 				<div class="signature">
-					<div class="signature__img-wrap">
-						<img height="48" width="48"
-							src="http://images.dailylife.com.au/2014/07/21/5612297/JH_Dinkus_127-20140721120915497630.jpg?rand=1405908837876"
-							alt="Jane Holroyd" class="post-avatar" itemprop="image">
-					</div>
-					<div class="post-meta">
-						<ul>
-							<li class="post-author" itemprop="author" itemscope=""
-								itemtype="http://schema.org/Person">
-								<h5 itemprop="name" rel="author">Jane Holroyd</h5>
-							</li>
-						</ul>
-						<time class="signature__datetime"
-							datetime="2015-11-11T14:03:00+00:00">November 11 2015</time>
-						<meta itemprop="datePublished" content="2015-11-11">
-					</div>
- -->
- 
-					<div data-lift="BlogPage.body" class="post-body"></div>
- 				</div>
-			</header>
-	
+		
+			<div data-lift="embed?what=/blog/_header"></div>
+			
+			<div data-lift="embed?what=/blog/_body"></div>
+			
 		</div>
 	</body>
 </html>
