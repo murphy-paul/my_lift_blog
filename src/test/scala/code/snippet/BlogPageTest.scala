@@ -19,7 +19,7 @@ this is a paragraph."""
   )
 
   
-  "BlogPage header" should " render header element" in {
+  "BlogPage" should " render header element" in {
     val expected = <h1 class="post-title">heading</h1>
     val inputNodeSeq = <h1 class="post-title"></h1>
     val actual = new BlogPage(Blog("heading","","","")).header(inputNodeSeq)
